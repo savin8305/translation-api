@@ -8,7 +8,12 @@ const app = express();
 const port = 5000;
 
 app.use(bodyParser.json());
-app.use(cors());
+app.use(cors({
+  origin: 'http://localhost:3000',
+  credentials: true,
+  optionsSuccessStatus: 204, // 204 No Content is a common choice
+}));
+
 app.use('/',(req,res)=>{
   res.send("i am working correctly")
 })
