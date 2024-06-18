@@ -9,9 +9,7 @@ const port = 5000;
 
 app.use(bodyParser.json());
 app.use(cors());
-app.use('/test',(req,res)=>{
-  res.send("i am working for you !")
-})
+
 const getCountryCode = async () => {
   try {
     const response = await axios.get('https://ipapi.co/json/');
